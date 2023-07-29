@@ -16,6 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - run: |
+          echo "Build"
           ls
           echo "${{ secrets.ENV_STAGING }}" >> .env
           docker compose build node-container
@@ -28,6 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - run: |
+          echo "Deploy"
           ls
           echo "${{ secrets.ENV_STAGING }}" >> .env
           docker compose up -d
