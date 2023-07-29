@@ -1,5 +1,5 @@
-name: BE deploy develop branch
-run-name: BE deploy develop branch
+name: BE deploy staging branch
+run-name: BE deploy staging branch
 on:
   push:
     branches:
