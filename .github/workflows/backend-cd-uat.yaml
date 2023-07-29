@@ -1,21 +1,31 @@
 name: BE deploy uat branch
 run-name: BE deploy uat branch
-
 on:
   push:
     branches:
-      - uat
-
+      - 'uat'
+    paths:
+    - backend/**
+defaults:
+  run:
+    working-directory: ./backend
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,backend-server-staging] # tag in server-dev
     steps:
-      - name: build
-        run: echo 'build'
-  publish:
-    needs: [build]
-    runs-on: ubuntu-latest
-    environment: production
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: |
+          ls
+          echo "Buil image"
+
+  deploy:
+    runs-on: [self-hosted,backend-server-staging] # tag in server-dev
+    needs: [ build ]
+    environment: uat
     steps:
-      - name: publish
-        run: echo 'publishing'
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: |
+          ls
+          echo "Run image"
