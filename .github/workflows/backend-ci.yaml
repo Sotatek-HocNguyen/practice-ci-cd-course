@@ -20,5 +20,5 @@ jobs:
         run: |
           echo "Start lint...."
           echo "Install tool..." #Install tool if github action is not built-in
-          docker run -i --rm -v $(pwd):/app/source -v $(pwd)/.prettierrc:/app/.prettierrc hocptit/eslint-ci:0.0.1 ".”
+          docker run -i --rm -v $(pwd):/app/source -v $(pwd)/.prettierrc:/app/.prettierrc hocptit/eslint-ci:0.0.1 "."
           echo "Lint done."
