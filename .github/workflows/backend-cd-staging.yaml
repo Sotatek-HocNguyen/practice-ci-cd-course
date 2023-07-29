@@ -23,9 +23,14 @@ jobs:
           echo "Buil image"
 
   deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    environment: production
+    runs-on: [self-hosted,backend-server-staging] # tag in server-dev
+    needs: [ build ]
     steps:
-      - name: publish
-        run: echo 'publishing'
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: |
+          echo "Deploy"
+          ls
+          echo "${{ secrets.ENV_STAGING }}" >> .env
+          docker compose up -d
+          echo "Run image"
