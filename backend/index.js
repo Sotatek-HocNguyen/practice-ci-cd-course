@@ -28,7 +28,7 @@ const Article = mongoose.model('Article', articleSchema);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.get('/', async (req, res) => {
-  res.json({mesage: "Hello"});a
+  res.json({mesage: "Hello"});
 });
 
 app.get('/api/article', async (req, res) => {
