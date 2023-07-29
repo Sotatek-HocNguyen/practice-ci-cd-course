@@ -23,6 +23,7 @@ const articleSchema = new mongoose.Schema({
 });
 const Article = mongoose.model('Article', articleSchema);
 
+
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
