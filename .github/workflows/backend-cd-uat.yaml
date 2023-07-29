@@ -6,6 +6,9 @@ on:
       - 'uat'
     paths:
     - backend/**
+defaults:
+  run:
+    working-directory: ./backend
 jobs:
   build:
     runs-on: [self-hosted,backend-server-staging] # tag in server-dev
