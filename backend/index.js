@@ -38,7 +38,6 @@ app.get('/api/article', async (req, res) => {
 
 app.post('/api/article', async (req, res) => {
   const { title, content } = req.body;
-
   try {
     const article = await Article.findOne({ id: id });
     if(article) return res.json(article)
