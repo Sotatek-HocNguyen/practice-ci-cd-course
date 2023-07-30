@@ -18,7 +18,7 @@ jobs:
           node-version: 14
 
       - name: Step heello
-        run: |
-					echo "Hello world"
-					ls
-					node -v
+      - run: |
+          ls
+          echo "hello"
+          node -v
