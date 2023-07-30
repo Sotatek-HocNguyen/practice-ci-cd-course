@@ -1,5 +1,5 @@
-name: Start
-run-name: Start hello run name
+name: Start #name action
+run-name: Start hello run name #run name
 on:
   push:
     branches:
